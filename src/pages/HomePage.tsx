@@ -5,7 +5,7 @@ import { Main } from '../components/Main';
 
 export const HomePage: React.FC = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-8'>
       <Header/>
       <Main/>
       <ListProducts/>
