@@ -5,3 +5,27 @@
 body {
   @apply bg-white font-sans;
 }
+
+#slide1:checked ~ .slide1{
+  @apply bg-purple-400 text-white
+}
+
+#slide2:checked ~ .slide2{
+  @apply bg-purple-400 text-white
+}
+
+#slide3:checked ~ .slide3{
+  @apply bg-purple-400 text-white
+}
+
+#slide4:checked ~ .slide4{
+  @apply bg-purple-400 text-white
+}
+
+#slide5:checked ~ .slide5{
+  @apply bg-purple-400 text-white
+}
+
+#slide6:checked ~ .slide6{
+  @apply bg-purple-400 text-white
+}

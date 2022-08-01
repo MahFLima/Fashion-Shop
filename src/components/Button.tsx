@@ -3,14 +3,18 @@ import { useState } from 'react';
 
 type Props = {
   title: string;
+  slide: string;
+  click: () => void;
 }
 
-export function Button({title}: Props){
+export function Button({title, slide, click}: Props){
 
-  const [isActive,setIsActive] = useState(true)
   return(
-    <button className={classNames(" text-gray-400 text-lg py-4 px-6 rounded hover:bg-purple-400 hover:text-white", "bg-purple-400" ? isActive : "bg-gray-100")}>
+  <button onClick={click}>
+    <input type="radio" name="slide" id={slide} className="hidden" checked/>
+    <label htmlFor={slide} className={classNames(" text-gray-400 text-lg py-4 px-6 rounded hover:bg-purple-400 hover:text-white", slide)}>
       {title}
-    </button>
+    </label>
+  </button>
   )
 }

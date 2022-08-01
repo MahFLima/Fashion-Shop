@@ -7,8 +7,8 @@ type Props = {
 
 export function CardProduct({name, description, srcImg, value}: Props){
   return(
-    <a href="#" className="flex flex-col">
-      <img className="w-60 h-60 rounded-lg" src={srcImg}/>
+    <a href="#" className="flex flex-col trasition hover:translate-y-1 duration-300">
+      <img className="w-60 h-60 rounded-lg object-cover" src={srcImg}/>
       <div className="flex justify-between items-center mt-4">
         <span className="flex flex-col">
           <strong>{name}</strong>

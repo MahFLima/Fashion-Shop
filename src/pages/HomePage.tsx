@@ -1,4 +1,5 @@
 import React from 'react';
+import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { ListProducts } from '../components/ListProducts';
 import { Main } from '../components/Main';
@@ -9,6 +10,7 @@ export const HomePage: React.FC = () => {
       <Header/>
       <Main/>
       <ListProducts/>
+      <Footer/>
     </div>
   );
 }
