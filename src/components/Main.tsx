@@ -2,10 +2,10 @@ import React from "react";
 
 export const Main: React.FC = () => {
   return (
-    <div className="grid grid-cols-2 px-16 h-60 gap-8">
+    <div className="flex flex-col lg:grid grid-cols-2 px-10 sm:px-16 h-60 gap-8">
       <div className="flex flex-col gap-6">
         <p className="text-lg text-gray-400">Absolutely hot collection 🔥</p>
-        <strong className="text-6xl">The Best Place To Find And Buy Amazing Products</strong>
+        <strong className="text-5xl sm:text-6xl">The Best Place To Find And Buy Amazing Products</strong>
         <p className="text-base text-gray-400">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at
           mauris ac sem pretium vulputate. Suspendisse et venenatis purus. Sed
