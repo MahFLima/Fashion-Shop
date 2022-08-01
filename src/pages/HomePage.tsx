@@ -8,7 +8,6 @@ export const HomePage: React.FC = () => {
   return (
     <div className='flex flex-col gap-8'>
       <Header/>
-      <Main/>
       <ListProducts/>
       <Footer/>
     </div>
