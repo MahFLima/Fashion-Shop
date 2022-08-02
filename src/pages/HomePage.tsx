@@ -14,9 +14,10 @@ export const HomePage: React.FC = () => {
   return (
     <div className='flex flex-col gap-8'>
       <Header onClick={ handleClick } />
-      {isActive ? (<MenuMobile />) :
+      {isActive ? (<MenuMobile click={() => {setIsActive(false)}} />) :
         (
           <>
+            <Main/>
             <ListProducts />
             <Footer />
           </>
