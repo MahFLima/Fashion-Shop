@@ -1,12 +1,10 @@
 import { List, ShoppingBag, X } from "phosphor-react";
 import React, { useState } from "react";
 
-export const Header: React.FC = () => {
-  const [isActive, setIsActive] = useState(false)
+type Props = React.HTMLProps<HTMLButtonElement> 
 
-  function handleClick(){
-    isActive ? setIsActive(false) : setIsActive(true)
-  }
+export const Header: React.FC<Props> = ({onClick}) => {
+
   return (
     <div className="flex justify-between px-8 md:px-20 py-10 items-center border-b border-gray-300">
       <h1 className="text-3xl md:text-4xl">Fashion <strong className="text-purple-400">Shop</strong></h1>
@@ -18,8 +16,8 @@ export const Header: React.FC = () => {
       <button className="hidden lg:flex">
         <ShoppingBag size={32} className="hover:text-purple-400"/>
       </button>
-      <button onClick={handleClick} className="lg:hidden">
-        {isActive ? <X size={32} className="hover:text-purple-400"/> : <List size={32} className="hover:text-purple-400"/>}
+      <button onClick={onClick} className="lg:hidden">
+        <List size={32} className="hover:text-purple-400"/>
       </button>
     </div>
   );
