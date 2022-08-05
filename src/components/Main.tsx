@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Main: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <div id="home" className="flex flex-col gap-8 px-10 mb-10 md:grid md:grid-cols-2">
       <div className="flex flex-col gap-6">
@@ -11,7 +13,7 @@ export const Main: React.FC = () => {
           mauris ac sem pretium vulputate. Suspendisse et venenatis purus. Sed
           odio felis, fermentum et tristique nec, laoreet sed ipsum.
         </p>
-        <a href="#products" className="bg-black text-white w-48 py-4 rounded font-medium text-center hover:opacity-70">Explore Now</a>
+        <a onClick={() => {navigate('/list-products')}} className="bg-black text-white w-48 py-4 rounded font-medium text-center hover:opacity-70">Explore Now</a>
         <div className="flex gap-10">
           <strong className="flex flex-col text-3xl">
             20k+

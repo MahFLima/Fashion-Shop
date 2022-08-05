@@ -1,15 +1,17 @@
-import { FileSearch, MagnifyingGlass } from "phosphor-react";
 import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import data from "../data";
 import { Button } from "./Button";
-import { CardProduct, Props } from "./CardProduct";
+import { CardProduct } from "./CardProduct";
 
 
 export const ListProducts: React.FC = () => {
+  const {index} = useParams()
+  const navigate = useNavigate()
   const [description, setDescription] = useState('')
   const [searchInput, setSearchInput] = useState('')
-  const result = data.filter(item => item.description === description)
-  const listSearch = data.filter(item => item.name.toLowerCase().includes(searchInput.toLowerCase()))
+  const result = description.length > 0 ? data.filter(item => item.description === description) : []
+  const listSearch = searchInput.length > 0 ? data.filter(item => item.name.toLowerCase().includes(searchInput.toLowerCase())):[]
 
   function handleDescription(description: string) {
     setDescription(description)
@@ -29,12 +31,12 @@ export const ListProducts: React.FC = () => {
         <button className="bg-black text-white w-48 py-4 rounded font-medium hover:opacity-70" >Explore Now</button>
       </div>
       <div className="flex justify-center flex-wrap gap-4 mb-10 overflow-auto">
-        <Button click={() => { handleDescription('Shoes') }} title="Shoes" slide="slide1" />
-        <Button click={() => { handleDescription('Shirts') }} title="Shirts" slide="slide2" />
-        <Button click={() => { handleDescription('Dresses') }} title="Dresses" slide="slide3" />
-        <Button click={() => { handleDescription('Pants') }} title="Pants" slide="slide4" />
-        <Button click={() => { handleDescription('Acessories') }} title="Acessories" slide="slide5" />
-        <Button click={() => { handleDescription('') }} title="Everything" slide="slide6" />
+        <Button name="slide" click={() => { handleDescription('Shoes') }} title="Shoes" slide="slide1" />
+        <Button name="slide" click={() => { handleDescription('Shirts') }} title="Shirts" slide="slide2" />
+        <Button name="slide" click={() => { handleDescription('Dresses') }} title="Dresses" slide="slide3" />
+        <Button name="slide" click={() => { handleDescription('Pants') }} title="Pants" slide="slide4" />
+        <Button name="slide" click={() => { handleDescription('Acessories') }} title="Acessories" slide="slide5" />
+        <Button name="slide" click={() => { handleDescription('') }} title="Everything" slide="slide6" />
       </div>
       <div className="flex flex-wrap gap-8 justify-center">
         {searchInput ?
@@ -47,6 +49,7 @@ export const ListProducts: React.FC = () => {
                   description={item.description}
                   srcImg={item.srcImg}
                   value={item.value}
+                  click={() => {navigate(`/product/${item.name}`)}}
                 />
               )
             })
@@ -61,6 +64,7 @@ export const ListProducts: React.FC = () => {
                     description={item.description}
                     srcImg={item.srcImg}
                     value={item.value}
+                    click={() => {navigate(`/product/${item.name}`)}}
                   />
                 )
               })) :
@@ -73,6 +77,7 @@ export const ListProducts: React.FC = () => {
                       description={item.description}
                       srcImg={item.srcImg}
                       value={item.value}
+                      click={() => {navigate(`/product/${item.name}`)}}
                     />
                   )
                 }))
