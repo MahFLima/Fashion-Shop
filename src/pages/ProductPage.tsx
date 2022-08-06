@@ -25,7 +25,7 @@ export function ProductPage() {
         (<MenuMobile />) :
         (
           <>
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 px-20 py-10">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 px-8 lg:px-20 py-10">
               <img src={product[0].srcImg} className="w-full h-[400px] object-contain" />
               <div className="flex flex-col gap-6">
                 <strong className="text-5xl">{product[0].name}</strong>
@@ -36,7 +36,7 @@ export function ProductPage() {
                   <Button name="slide" click={() => { }} title="M" slide="slide2" />
                   <Button name="slide" click={() => { }} title="G" slide="slide3" />
                 </div>
-                <div className="w-ful flex gap-8">
+                <div className="w-ful flex flex-wrap gap-8">
                   <div className="w-full flex justify-between items-center border border-gray-400 px-6 py-4">
                     <p className="text-base text-gray-400">Quantity</p>
                     <span className="flex gap-6">
