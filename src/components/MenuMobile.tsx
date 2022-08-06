@@ -1,16 +1,21 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
-type Props = {
-  click: () => void
-}
 
-export const MenuMobile: React.FC<Props> = ({click}) => {
+
+export const MenuMobile: React.FC = () => {
+  const navigate = useNavigate()
   return (
     <div className="w-full bg-white">
       <div className="flex flex-col gap-8 text-lg text-gray-400 ">
-        <a onClick={click} href="#home" className="px-6 py-4 border-b border-gray-400" >Home</a>
-        <a onClick={click} href="#products" className="px-6 py-4 border-b border-gray-400" >Products</a>
-        <a onClick={click} href="#contacts" className="px-6 py-4 border-b border-gray-400" >Contact</a>
+        <a onClick={() => {navigate('/')}} className="px-6 py-4 border-b border-gray-400" >
+          Home
+        </a>
+        <a onClick={() => {navigate('/list-products')}} className="px-6 py-4 border-b border-gray-400">
+          Products
+        </a>
+        <a href="#contacts" className="px-6 py-4 border-b border-gray-400">
+          Contact
+        </a>
       </div>
     </div>
   )

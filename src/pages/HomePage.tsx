@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import { ListProducts } from '../components/ListProducts';
 import { Main } from '../components/Main';
 import { MenuMobile } from '../components/MenuMobile';
 
@@ -14,13 +13,10 @@ export const HomePage: React.FC = () => {
     isActive ? setIsActive(false) : setIsActive(true)
   }
 
-  function handleNavigation(){
-    setIsActive(false)
-  }
   return (
-    <div className='flex flex-col gap-8'>
+    <div className='flex flex-col gap-8 justify-between'>
       <Header onClick={ handleClick } />
-      {isActive ? (<MenuMobile click={() => {handleNavigation()}} />) :
+      {isActive ? (<MenuMobile/>) :
         (
           <>
             <Main/>

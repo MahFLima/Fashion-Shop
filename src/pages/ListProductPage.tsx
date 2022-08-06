@@ -11,10 +11,11 @@ export const ListProductPage: React.FC = () => {
   function handleClick() {
     isActive ? setIsActive(false) : setIsActive(true)
   }
+
   return (
     <div className='flex flex-col gap-8'>
       <Header onClick={ handleClick } />
-      {isActive ? (<MenuMobile click={() => {setIsActive(false)}} />) :
+      {isActive ? (<MenuMobile/>) :
         (
           <>
             <ListProducts />
