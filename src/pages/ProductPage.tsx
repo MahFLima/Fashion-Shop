@@ -25,8 +25,8 @@ export function ProductPage() {
         (<MenuMobile />) :
         (
           <>
-            <div className="grid grid-cols-2 gap-10 px-20 py-10">
-              <img src={product[0].srcImg} className="w-full h-[400px] object-cover" />
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 px-20 py-10">
+              <img src={product[0].srcImg} className="w-full h-[400px] object-contain" />
               <div className="flex flex-col gap-6">
                 <strong className="text-5xl">{product[0].name}</strong>
                 <p className="text-xl">$ {product[0].value}</p>
